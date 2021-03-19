@@ -5,13 +5,17 @@ import Cookie from "./Cookie";
 import Chip from "./Chip";
 import NavBar from "./NavBar";
 
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import VendingMachine from "./VendingMachine"
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <NavBar />
+        <Route exact path="/">
+          <VendingMachine />
+        </Route>
         <Route exact path="/candy">
           <Candy />
         </Route>
@@ -20,9 +24,6 @@ function App() {
         </Route>
         <Route exact path="/chip">
           <Chip />
-        </Route>
-        <Route exact path="/">
-          <Home />
         </Route>
       </BrowserRouter>
     </div>
